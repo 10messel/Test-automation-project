@@ -13,3 +13,13 @@ class LoginPageLocators:
     PASSWORD1_FIELD = (By.CSS_SELECTOR, "#id_registration-password1")
     PASSWORD2_FIELD = (By.CSS_SELECTOR, "#id_registration-password2")
     REGISTRATION_BUTTON = (By.CSS_SELECTOR, '[name = "registration_submit"]')
+
+
+class ProductPageLocators:
+    BREADCRUMB = (By.CSS_SELECTOR, ".breadcrumb")
+    PRODUCT_IMAGE = (By.CSS_SELECTOR, "div .item img ")
+    PRODUCT_TITLE = (By.CSS_SELECTOR, "div h1")
+    PRODUCT_PRICE = (By.CSS_SELECTOR, "div .product_main .price_color")
+    IN_STOCK_AVAIL = (By.CSS_SELECTOR, "div .product_main .instock")
+    WRITE_REVIEW_BUTTON = (By.CSS_SELECTOR, "#write_review")
+    ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
