@@ -17,9 +17,11 @@ class LoginPageLocators:
 
 class ProductPageLocators:
     BREADCRUMB = (By.CSS_SELECTOR, ".breadcrumb")
-    PRODUCT_IMAGE = (By.CSS_SELECTOR, "div .item img ")
+    PRODUCT_IMAGE = (By.CSS_SELECTOR, ".item.active img")
     PRODUCT_TITLE = (By.CSS_SELECTOR, "div h1")
-    PRODUCT_PRICE = (By.CSS_SELECTOR, "div .product_main .price_color")
-    IN_STOCK_AVAIL = (By.CSS_SELECTOR, "div .product_main .instock")
+    PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
+    IN_STOCK_AVAIL = (By.CSS_SELECTOR, ".product_main .instock")
     WRITE_REVIEW_BUTTON = (By.CSS_SELECTOR, "#write_review")
     ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages > .alert-success:nth-child(1) > .alertinner strong")
+    INFO_MESSAGE = (By.CSS_SELECTOR, ".alert-info strong")

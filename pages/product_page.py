@@ -30,3 +30,13 @@ class ProductPage(BasePage):
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
+
+    def should_be_product_messages(self):
+        added_to_basket = self.browser.find_element(*ProductPageLocators.SUCCESS_MESSAGE).text
+        title_of_product = self.browser.find_element(*ProductPageLocators.PRODUCT_TITLE).text
+        assert added_to_basket == title_of_product, "Success message title != product title"
+        print("Success message title == product title")
+        basket_price = self.browser.find_element(*ProductPageLocators.INFO_MESSAGE).text
+        price_of_product = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
+        assert basket_price == price_of_product, "Basket price != product price"
+        print("Basket price == product price")
