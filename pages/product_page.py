@@ -5,6 +5,9 @@ from selenium.common.exceptions import NoAlertPresentException
 
 
 class ProductPage(BasePage):
+    def add_to_basket(self):
+        self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON).click()
+
     def should_be_product_page(self):
         assert self.is_element_present(*ProductPageLocators.BREADCRUMB), "Breadcrumb is not presented"
         assert self.is_element_present(*ProductPageLocators.PRODUCT_IMAGE), "Product image is not presented"
@@ -13,9 +16,6 @@ class ProductPage(BasePage):
         assert self.is_element_present(*ProductPageLocators.IN_STOCK_AVAIL), "In stock available is not presented"
         assert self.is_element_present(*ProductPageLocators.WRITE_REVIEW_BUTTON), "Review button is not presented"
         assert self.is_element_present(*ProductPageLocators.ADD_TO_BASKET_BUTTON), "Basket button is not presented"
-
-    def add_to_basket(self):
-        self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON).click()
 
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
@@ -40,3 +40,11 @@ class ProductPage(BasePage):
         price_of_product = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
         assert basket_price == price_of_product, "Basket price != product price"
         print("Basket price == product price")
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def should_disappear_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is not disappeared, but should be"

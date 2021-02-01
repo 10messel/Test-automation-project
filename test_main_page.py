@@ -26,15 +26,6 @@ def test_guest_should_see_login_link(browser):
 
 
 @pytest.mark.smoke
-def test_login_should_be_presented_in_url(browser):
-    link = "http://selenium1py.pythonanywhere.com/accounts/login/"
-    page = LoginPage(browser, link)
-    page.open()
-    time.sleep(3)
-    page.should_be_login_url()
-
-
-@pytest.mark.smoke
 def test_guest_should_see_login_form(browser):
     link = "http://selenium1py.pythonanywhere.com/accounts/login/"
     page = LoginPage(browser, link)
@@ -50,3 +41,12 @@ def test_guest_should_see_register_form(browser):
     page.open()
     time.sleep(3)
     page.should_be_register_form()
+
+
+@pytest.mark.smoke
+def test_login_should_be_presented_in_url(browser):
+    link = "http://selenium1py.pythonanywhere.com/accounts/login/"
+    page = LoginPage(browser, link)
+    page.open()
+    time.sleep(3)
+    page.should_be_login_url()
