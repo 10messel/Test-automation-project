@@ -4,11 +4,19 @@ from selenium.webdriver.common.by import By
 class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BASKET_BUTTON = (By.CSS_SELECTOR, "span > a")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+
+
+class BasketPageLocators:
+    BASKET_ITEMS = (By.CSS_SELECTOR, ".basket-items")
+    BASKET_EMPTY = (By.CSS_SELECTOR, "div p")
 
 
 class LoginPageLocators:
     USERNAME_FIELD = (By.CSS_SELECTOR, "#id_login-username")
     PASSWORD_FIELD = (By.CSS_SELECTOR, "#id_login-password")
+    FORGOT_PASSWORD = (By.CSS_SELECTOR, "p > a")
     LOGIN_BUTTON = (By.CSS_SELECTOR, '[name = "login_submit"]')
     EMAIL_FIELD = (By.CSS_SELECTOR, "#id_registration-email")
     PASSWORD1_FIELD = (By.CSS_SELECTOR, "#id_registration-password1")
